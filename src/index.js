@@ -2,11 +2,14 @@ import "./styles.css";
 
 const getTodoText = (target) => target.firstChild.innerText;
 
+const deleteFomList = (list, target) =>
+  document.getElementById(list).removeChild(target);
+
 const deleteFromImcompleteList = (target) =>
-  document.getElementById("incomplete-list").removeChild(target);
+  deleteFomList("incomplete-list", target);
 
 const deleteFromCompleteList = (target) =>
-  document.getElementById("complete-list").removeChild(target);
+  deleteFomList("complete-list", target);
 
 const addImcompleteList = (text) => {
   // create div
